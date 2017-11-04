@@ -22,3 +22,10 @@ cor(iris$Sepal.Width, iris$Sepal.Length)
 a <- cor(data)
 corrplot(a)
 ```
+
+###  카운트
+library(dplyr) 
+count <- summer %>%
+group_by(City) %>%
+summarise(n=n())
+count
