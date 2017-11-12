@@ -1,0 +1,108 @@
+
+'.source.js':
+  'React Component1':
+    'prefix': 'rc'
+    'body': '''
+            import React, { Component, PropTypes } from 'react';
+            const propTypes = {
+            };
+            const defaultProps = {
+            };
+            class ${1:MyComponent} extends Component {
+                constructor(props) {
+                    super(props);
+                }
+                render() {
+                    return(
+                        <div>${1:MyComponent}</div>
+                    );
+                }
+            }
+            ${1:MyComponent}.propTypes = propTypes;
+            ${1:MyComponent}.defaultProps = defaultProps;
+            export default ${1:MyComponent};
+            '''
+
+  'Export Const':
+    'prefix': 'econst'
+    'body': """export const $1 = '$1'$2 """
+
+  'logg logg':
+    'prefix': 'logg'
+    'body': """console.log('$1 :'+ $1);$2"""
+
+
+  'parse find':
+    'prefix': 'parsefind'
+    'body': """
+        var GameScore = Parse.Object.extend("GameScore");
+    var query = new Parse.Query(GameScore);
+    query.equalTo("playerName", "Dan Stemkoski");
+    query.find({
+      success: function(results) {
+        alert("Successfully retrieved " + results.length + " scores.");
+        for (var i = 0; i < results.length; i++) {
+          var object = results[i];
+          console.log(object.id + ' - ' + object.get('playerName'));
+        }
+      },
+      error: function(error) {
+        console.log("Error: " + error.code + " " + error.message);
+      }
+    });
+    """
+
+  'parse save':
+    'prefix': 'parsesave'
+    'body': """
+var GameScore = Parse.Object.extend("GameScore");
+var gameScore = new GameScore();
+
+gameScore.set("score", 1337);
+gameScore.set("playerName", "Sean Plott");
+gameScore.set("cheatMode", false);
+
+gameScore.save(null, {
+  success: function(gameScore) {
+    console.log('New object created with objectId: ' + gameScore.id);
+  },
+  error: function(gameScore, error) {
+    console.log('Failed to create new object, with error code: ' + error.message);
+  }
+});
+"""
+
+
+  'ant design react-draggable':
+    'prefix': 'react-draggable'
+    'body': """
+                  import React from 'react';
+            import ReactDOM from 'react-dom';
+            import Draggable from 'react-draggable';
+
+            class App extends React.Element {
+
+              eventLogger = (e: MouseEvent, data: Object) => {
+                console.log('Event: ', e);
+                console.log('Data: ', data);
+              };
+
+              render() {
+                return (
+                  <Draggable
+                    axis="x"
+                    handle=".handle"
+                    defaultPosition={{x: 0, y: 0}}
+                    position={null}
+                    grid={[25, 25]}
+                    onStart={this.handleStart}
+                    onDrag={this.handleDrag}
+                    onStop={this.handleStop}>
+                    <div>
+                      <div className="handle">Drag from here</div>
+                      <div>This readme is really dragging on...</div>
+                    </div>
+                  </Draggable>
+                );
+              }
+            } """
