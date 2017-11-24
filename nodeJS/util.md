@@ -23,3 +23,10 @@ false
 console.log(util.randomHexString(10));
 637d95afa9
 ```
+
+
+```javascript
+//https test
+console.log(util.sendHttps());
+...data 
+```

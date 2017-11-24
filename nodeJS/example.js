@@ -13,3 +13,6 @@ console.log(util.empty('abcdef'));
 
 //랜덤 글자
 console.log(util.randomHexString(10));
+
+// https 요청
+console.log(util.sendHttps);
