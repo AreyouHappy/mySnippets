@@ -24,3 +24,26 @@ DBNAME=db-name
 # S3 bucket name
 BUCKET=bucker-name
 ```
+
+### s3 복사하기
+
+bucket1의 내용을 bucket2로 복사.
+```
+aws s3 cp s3://bucket1 s3://bucket1
+
+```
+
+### s3 파일 다운로드
+
+bucket1 s3에서 최신 파일 다운로드 하기
+```
+S3LATESTFILE=`aws s3 ls bucket1 --region ap-northeast-2 --recursive | sort | tail -n 1 | awk '{print $4}'` && aws s3 cp s3://bucket1/$S3LATESTFILE ./_backup/ --region ap-northeast-2 && tar xopf ./_backup/$S3LATESTFILE -C ./_backup/
+
+```
+
+### s3 배포하기
+
+```
+aws s3 sync build/ s3://bucket1
+
+```
