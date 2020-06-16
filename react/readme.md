@@ -6,3 +6,24 @@ bootstrap react
 ```
 npm install --save reactstrap react-addons-transition-group react-addons-css-transition-group react react-dom
 ```
+
+
+함수형 컴포넌트
+
+```ts
+import React from 'react';
+
+interface Props {
+  date: string;
+}
+
+/**
+ * 설명
+ */
+export const DateTime = (props: Props) => {
+
+  return <>data</>;
+};
+
+```
+
