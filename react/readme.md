@@ -10,6 +10,8 @@ npm install --save reactstrap react-addons-transition-group react-addons-css-tra
 
 함수형 컴포넌트
 
+NOTE: export const DateTime = () => ... - anonymous component 로 인식한다.
+
 ```ts
 import React from 'react';
 
@@ -20,10 +22,11 @@ interface Props {
 /**
  * 설명
  */
-export const DateTime = (props: Props) => {
+const DateTime = (props: Props) => {
 
   return <>data</>;
 };
 
+export { DateTime }
 ```
 
